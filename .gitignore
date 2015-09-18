@@ -8,9 +8,11 @@
 
 # All platforms
 Library
+obj
 Temp
 *.csproj
 *.pidb
 *.unityproj
 *.sln
 *.userprefs
+*.suo
