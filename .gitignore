@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -20,23 +19,3 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-=======
-# OS X only (not needed on other platforms)
-.DS_Store
-*.swp
-*.Trashes
-
-[Bb]uild
-[Bb]uilds
-
-# All platforms
-Library
-obj
-Temp
-*.csproj
-*.pidb
-*.unityproj
-*.sln
-*.userprefs
-*.suo
->>>>>>> basic-folder-structure
