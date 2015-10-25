@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Ship : MonoBehaviour {
 
+	public float missleDamage = 20f;
 	public float hp = 100f;
-	public GameObject model;
 	public ParticleSystem particleSystem;
 
 	// Use this for initialization
@@ -19,7 +19,8 @@ public class Ship : MonoBehaviour {
 
 	// when a missle collide with ship
 	void OnTriggerEnter(Collider col) {
-		hp = hp - 20f;
+		hp = hp - missleDamage;
+		particleSystem.Emit (3);
 		if (hp <= 0) {
 			Destroy(this.gameObject);
 			particleSystem.Emit(300);
