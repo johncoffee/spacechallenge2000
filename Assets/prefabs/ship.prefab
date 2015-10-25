@@ -9,7 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 474506}
   - 54: {fileID: 5409502}
-  m_Layer: 0
+  - 114: {fileID: 11428502}
+  - 65: {fileID: 6507856}
+  - 114: {fileID: 11433236}
+  m_Layer: 10
   m_Name: ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +28,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 431932}
   - 33: {fileID: 3315992}
-  - 65: {fileID: 6554046}
   - 23: {fileID: 2306598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +71,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4b8d40d0997a944879af1db3cfd346d0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -105,25 +107,60 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6554046
+--- !u!65 &6507856
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120420}
+  m_GameObject: {fileID: 118746}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11428502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc1c4645c0d5478eb66f5e5b13f21cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAtWill: 1
+  speed: 5
+  spawnHere: {fileID: 118746}
+  bulletPrefab: {fileID: 128674, guid: 1a0f645e4e7d442838fdb64f7801100b, type: 2}
+--- !u!114 &11433236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ebb3a8cbaa4e0e8b839d5642069ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b8d40d0997a944879af1db3cfd346d0, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118746}

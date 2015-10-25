@@ -25,7 +25,6 @@ public class GameStuff : MonoBehaviour {
 			Vector3 targetPos = target.transform.position;		
 			Vector3 velocity = targetPos - missle.transform.position;
 			velocity = velocity.normalized * speed;
-			Debug.Log (velocity);
 			missle.GetComponent<Rigidbody>().velocity = velocity;
 
 		}

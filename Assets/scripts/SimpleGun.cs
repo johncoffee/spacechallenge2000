@@ -6,6 +6,8 @@ public class SimpleGun : MonoBehaviour {
 	float cooldown = 1.5f;
 	float lastShot = 0f;
 
+	public bool fireAtWill = true; 
+
 	public float speed = 5f;
 
 	public GameObject spawnHere;
@@ -19,6 +21,20 @@ public class SimpleGun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (fireAtWill && Time.timeSinceLevelLoad > lastShot + cooldown) {
+			lastShot = Time.timeSinceLevelLoad;
+
+			int radius = 10;
+			ShootAt(
+				new Vector3(
+				-radius + (Random.value * 2 * radius),
+				-radius + (Random.value * 2 * radius),
+				-radius + (Random.value * 2 * radius)
+				)
+			);
+		}
+
 		if (Input.GetKey(KeyCode.A)) {
 			int radius = 10;
 			ShootAt(
