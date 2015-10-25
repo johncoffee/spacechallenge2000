@@ -30,6 +30,8 @@ public class GameStuff : MonoBehaviour {
 			Vector3 velocity = targetPos - missle.transform.position;
 			velocity = velocity.normalized * speed;
 			missle.GetComponent<Rigidbody>().velocity = velocity;
+
+			missle.transform.LookAt(targetPos);
 		}
 	}
 	
