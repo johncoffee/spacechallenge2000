@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SimpleGun : MonoBehaviour {
 
-	float cooldown = 1.5f;
+	public float cooldown = 0.5f;
 	float lastShot = 0f;
 
 	public bool fireAtWill = true; 
