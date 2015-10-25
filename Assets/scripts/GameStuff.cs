@@ -3,18 +3,22 @@ using System.Collections;
 
 public class GameStuff : MonoBehaviour {
 
-	public int number = 10;
+	public int numberOfMissles = 10;
 	public int radius = 10;
 	public GameObject misslePrefab;
 	public GameObject target;
 	public float speed = 3f;
 
+	public bool spawnOnStart = true;
+
 	void Start () {
-//		Spawn();
+		if (spawnOnStart) {
+			Spawn();
+		}
 	}
 
 	void Spawn() {
-		for (int i =0; i< number; i++) {
+		for (int i =0; i< numberOfMissles; i++) {
 			GameObject missle = (GameObject) Instantiate(misslePrefab);
 			missle.transform.position = new Vector3(
 				-radius + (Random.value * 2 * radius),
@@ -26,11 +30,9 @@ public class GameStuff : MonoBehaviour {
 			Vector3 velocity = targetPos - missle.transform.position;
 			velocity = velocity.normalized * speed;
 			missle.GetComponent<Rigidbody>().velocity = velocity;
-
 		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Spawn();

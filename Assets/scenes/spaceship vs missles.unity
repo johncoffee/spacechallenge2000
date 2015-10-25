@@ -172,11 +172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6358298c3f94ea0972b63e78e91e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 35
+  numberOfMissles: 35
   radius: 75
   misslePrefab: {fileID: 143844, guid: f80093678528b458da9cc138af913f0a, type: 2}
   target: {fileID: 1568430720}
   speed: 6
+  spawnOnStart: 1
 --- !u!4 &362797591
 Transform:
   m_ObjectHideFlags: 0
