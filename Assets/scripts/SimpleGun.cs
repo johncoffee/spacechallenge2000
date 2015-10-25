@@ -25,25 +25,11 @@ public class SimpleGun : MonoBehaviour {
 		if (fireAtWill && Time.timeSinceLevelLoad > lastShot + cooldown) {
 			lastShot = Time.timeSinceLevelLoad;
 
-			int radius = 10;
-			ShootAt(
-				new Vector3(
-				-radius + (Random.value * 2 * radius),
-				-radius + (Random.value * 2 * radius),
-				-radius + (Random.value * 2 * radius)
-				)
-			);
+			DebugShotInRandomDirection();
 		}
 
 		if (Input.GetKey(KeyCode.A)) {
-			int radius = 10;
-			ShootAt(
-				new Vector3(
-				-radius + (Random.value * 2 * radius),
-				-radius + (Random.value * 2 * radius),
-				-radius + (Random.value * 2 * radius)
-				)
-			);
+			DebugShotInRandomDirection();
 		}
 	}
 
@@ -55,5 +41,19 @@ public class SimpleGun : MonoBehaviour {
 		velocity = velocity.normalized * speed;
 		bullet.GetComponent<Rigidbody>().velocity = velocity;		
 	}
+
+
+
 	
+	// this is a usefull method that demonstrates a shot
+	void DebugShotInRandomDirection() {
+		int radius = 10;
+		ShootAt(
+			new Vector3(
+			-radius + (Random.value * 2 * radius),
+			-radius + (Random.value * 2 * radius),
+			-radius + (Random.value * 2 * radius)
+			)
+		);
+	}
 }

@@ -18,5 +18,8 @@ public class Ship : MonoBehaviour {
 	// when a missle collide with ship
 	void OnTriggerEnter(Collider col) {
 		hp = hp - 20f;
+		if (hp <= 0) {
+			Destroy(this.gameObject);
+		}
 	}
 }
