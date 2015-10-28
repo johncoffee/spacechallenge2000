@@ -11,26 +11,26 @@ public class SimpleGun : MonoBehaviour {
 	public float speed = 5f;
 
 	public GameObject spawnHere;
-
+	 
 	public GameObject bulletPrefab;
 
 	// Use this for initialization
 	void Start () {
 		lastShot = -cooldown;
+
+		for (int j = 0; j < 20; j++){
+
+			for (int i = 0; i < 20; i++){
+				
+				ShootAt(new Vector3(Mathf.Cos(0.1f*Mathf.PI*i),Mathf.Sin(0.1f*Mathf.PI*i),Mathf.Cos(0.1f*Mathf.PI*j)));
+				
+			}
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (fireAtWill && Time.timeSinceLevelLoad > lastShot + cooldown) {
-			lastShot = Time.timeSinceLevelLoad;
-
-			DebugShotInRandomDirection();
-		}
-
-		if (Input.GetKey(KeyCode.A)) {
-			DebugShotInRandomDirection();
-		}
 	}
 
 	void ShootAt (Vector3 target) {
@@ -40,20 +40,5 @@ public class SimpleGun : MonoBehaviour {
 		Vector3 velocity = target - transform.position;
 		velocity = velocity.normalized * speed;
 		bullet.GetComponent<Rigidbody>().velocity = velocity;		
-	}
-
-
-
-	
-	// this is a usefull method that demonstrates a shot
-	void DebugShotInRandomDirection() {
-		int radius = 10;
-		ShootAt(
-			new Vector3(
-			-radius + (Random.value * 2 * radius),
-			-radius + (Random.value * 2 * radius),
-			-radius + (Random.value * 2 * radius)
-			)
-		);
 	}
 }
