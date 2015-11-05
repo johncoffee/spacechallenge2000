@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Ship : MonoBehaviour {
 
+	public uint remainingBullets = 50;
 	public float missleDamage = 20f;
 	public float hp = 100f;
 	public ParticleSystem damageEffects;
