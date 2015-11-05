@@ -315,10 +315,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11428502, guid: 8eadb0ddf501b416c864ed6f5656bd85, type: 2}
-      propertyPath: cooldown
-      value: .600000024
-      objectReference: {fileID: 0}
     - target: {fileID: 11433236, guid: 8eadb0ddf501b416c864ed6f5656bd85, type: 2}
       propertyPath: damageEffects
       value: 
