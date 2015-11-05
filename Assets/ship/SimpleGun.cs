@@ -4,13 +4,13 @@ using System.Collections;
 public class SimpleGun : MonoBehaviour {
 
 	public float cooldown = 0.5f;
-	float lastShot = 0f;
+	float lastShot;
 
 	public bool fireAtWill = true; 
 
 	public float speed = 5f;
 
-	public GameObject spawnHere;
+	public Transform bulletsSpawnHere;
 	 
 	public GameObject bulletPrefab;
 
@@ -35,7 +35,7 @@ public class SimpleGun : MonoBehaviour {
 
 	void ShootAt (Vector3 target) {
 		GameObject bullet = (GameObject) Instantiate(bulletPrefab);
-		bullet.transform.position = spawnHere.transform.position;
+		bullet.transform.position = bulletsSpawnHere.position;
 	
 		Vector3 velocity = target - transform.position;
 		velocity = velocity.normalized * speed;

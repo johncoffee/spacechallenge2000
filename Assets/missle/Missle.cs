@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class Missle : MonoBehaviour {
-
-	public ParticleSystem particleSystem;
-
+	
 	// Use this for initialization
 	void Start () {
 	

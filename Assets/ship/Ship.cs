@@ -5,7 +5,7 @@ public class Ship : MonoBehaviour {
 
 	public float missleDamage = 20f;
 	public float hp = 100f;
-	public ParticleSystem particleSystem;
+	public ParticleSystem damageEffects;
 
 	// Use this for initialization
 	void Start () {
@@ -20,10 +20,10 @@ public class Ship : MonoBehaviour {
 	// when a missle collide with ship
 	void OnTriggerEnter(Collider col) {
 		hp = hp - missleDamage;
-		particleSystem.Emit (3);
+		damageEffects.Emit (3);
 		if (hp <= 0) {
 			Destroy(this.gameObject);
-			particleSystem.Emit(300);
+			damageEffects.Emit(300);
 		}
 	}
 }
